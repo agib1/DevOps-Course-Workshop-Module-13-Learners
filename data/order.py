@@ -40,3 +40,4 @@ class Order(db.Model):
     def set_as_processed(self):
         self.date_processed = datetime.now(tz=utc)
         self.status = COMPLETE
+

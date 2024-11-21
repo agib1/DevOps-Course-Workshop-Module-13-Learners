@@ -1,4 +1,4 @@
-from data.database import save_order, get_all_orders
+from data.database import save_order, get_all_orders, remove_order
 from products import create_product_download
 from apscheduler.schedulers.background import BackgroundScheduler
 import requests
@@ -36,6 +36,7 @@ def process_orders(app):
             )
         except:
             app.logger.exception("Error processing order {id}".format(id = order.id))
+            remove_order(order)
 
         app.logger.info("Response from endpoint: " + response.text)
 

@@ -36,6 +36,9 @@ def add_order(product, customer, date_placed, date_processed, download):
     db.session.commit()
     return order
 
+def remove_order(order):
+    db.session.query(order).delete()
+    db.session.commit()
 
 def save_order(order):
     db.session.add(order)
