@@ -16,10 +16,8 @@ app.config.from_object(Config)
 initialise_database(app)
 initialise_scheduled_jobs(app)
 
-
 logging.basicConfig(level=logging.INFO)
 configure_azure_monitor()
-
 
 @app.route("/")
 def index():
