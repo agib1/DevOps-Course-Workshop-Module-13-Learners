@@ -17,7 +17,7 @@ initialise_database(app)
 initialise_scheduled_jobs(app)
 
 logging.basicConfig(level=logging.INFO)
-configure_azure_monitor()
+configure_azure_monitor(enable_live_metrics = True)
 
 @app.route("/")
 def index():
